@@ -1,0 +1,44 @@
+// 获取当月所有日期
+
+getMondthDay() {
+    let now = new Date();
+    let date = now.getDate();
+    let nowDay = [];
+    for (let i = 1; i <= date; i++) {
+        let time =
+            now.getFullYear() +
+            "-" +
+            (now.getMonth() + 1 < 9 ?
+                "0" + (now.getMonth() + 1) :
+                now.getMonth() + 1) +
+            "-" +
+            (i < 9 ? "0" + i : i);
+        nowDay.push(time);
+    }
+    return nowDay;
+}
+
+//获取上个月日期
+getEndMonthDay() {
+    let now = new Date();
+    now.setMonth(now.getMonth() - 1);
+    now.setDate(1);
+    let next = new Date();
+    next.setDate(1);
+    let beforeDay = [];
+    let time = "";
+    while (now < next) {
+        // arr.push(now.getDate());
+        time =
+            now.getFullYear() +
+            "-" +
+            (now.getMonth() + 1 < 9 ?
+                "0" + (now.getMonth() + 1) :
+                now.getMonth() + 1) +
+            "-" +
+            (now.getDate() < 9 ? "0" + now.getDate() : now.getDate());
+        beforeDay.push(time);
+        now.setDate(now.getDate() + 1);
+    }
+    return beforeDay;
+},
