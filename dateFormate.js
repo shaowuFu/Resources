@@ -14,7 +14,7 @@ Date.prototype.format = function () {
 
 // 获取当月所有日期
 
-getMondthDay() {
+ function getMondthDay() {
     let now = new Date();
     let date = now.getDate();
     let nowDay = [];
@@ -33,7 +33,7 @@ getMondthDay() {
 }
 
 //获取上个月日期
-getEndMonthDay() {
+function getEndMonthDay() {
     let now = new Date();
     now.setMonth(now.getMonth() - 1);
     now.setDate(1);
@@ -55,4 +55,4 @@ getEndMonthDay() {
         now.setDate(now.getDate() + 1);
     }
     return beforeDay;
-},
+}

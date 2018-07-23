@@ -87,15 +87,12 @@ map.on("click", event => {});
 
 
 //对输入的字符进行条件查找
-addressAutoComplete() {
-    let _this = this;
-    AMap.plugin("AMap.Autocomplete", function () {
-        let autoOptions = {
-            city: "全国"
-        };
-        _this.autoComplete = new AMap.Autocomplete(autoOptions);
-    });
-    _this.autoComplete.search(_this.addressName, function (status, result) {
-        if (status === "complete") {}
-    });
-}
+AMap.plugin("AMap.Autocomplete", function () {
+    let autoOptions = {
+        city: "全国"
+    };
+    this.autoComplete = new AMap.Autocomplete(autoOptions);
+});
+this.autoComplete.search(this.addressName, function (status, result) {
+    if (status === "complete") {}
+});
