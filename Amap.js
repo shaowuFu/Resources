@@ -96,3 +96,24 @@ AMap.plugin("AMap.Autocomplete", function () {
 this.autoComplete.search(this.addressName, function (status, result) {
     if (status === "complete") {}
 });
+
+// 对地图添加定位点
+/**
+ *
+ * @param {精度} lng
+ * @param {纬度} lat
+ * @param {地址} address
+ */
+function updateMarker(lng, lat, address) {
+    var marker = null;
+    if (!!marker) {
+        map.remove(this.marker);
+    }
+    marker = null;
+    marker = new AMap.Marker({
+        icon: "http://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+        position: new AMap.LngLat(lng, lat),
+        title: address  //信息提示
+    });
+    map.add(this.marker);
+}
