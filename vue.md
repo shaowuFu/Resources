@@ -15,3 +15,6 @@
 ## vscode 插件推荐
 
 [https://github.com/varHarrie/varharrie.github.io/issues/10](https://github.com/varHarrie/varharrie.github.io/issues/10)
+
+## Laravue
+https://doc.laravue.dev/guide/
